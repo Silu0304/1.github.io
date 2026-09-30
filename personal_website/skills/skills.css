@@ -1,0 +1,969 @@
+/* =========================================================
+   SKILLS PAGE
+   ========================================================= */
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    min-height: 100vh;
+
+    color: #443333;
+
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background:
+        url("../images/home-bg.png")
+        center center /
+        cover fixed no-repeat;
+
+    overflow-x: hidden;
+}
+
+/* =========================================================
+   MAIN SKILLS AREA
+   ========================================================= */
+
+.skills-stage {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding:
+        92px
+        4vw
+        32px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND OVERLAY
+   ========================================================= */
+
+.skills-stage::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    background:
+        rgba(255, 245, 248, 0.28);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTENT WRAPPER
+   ========================================================= */
+
+.skills-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 1120px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   PAGE TITLE
+   ========================================================= */
+
+.page-title {
+    margin: 0 auto;
+
+    text-align: center;
+
+    font-size:
+        clamp(2.5rem, 5vw, 4rem);
+
+    line-height: 1.08;
+
+    font-weight: 700;
+
+    color: #563340;
+
+    letter-spacing: -0.02em;
+}
+
+
+/* =========================================================
+   SKILLS GRID
+   ========================================================= */
+
+.skills-grid {
+    width: 100%;
+
+    margin-top:
+        clamp(26px, 4vh, 42px);
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap:
+        clamp(14px, 2vw, 24px);
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   SKILL CARD
+   ========================================================= */
+
+.skill-card {
+    position: relative;
+
+    min-width: 0;
+
+    min-height: 0;
+
+    padding:
+        clamp(18px, 2vw, 26px);
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.64);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.72);
+
+    box-shadow:
+        0 12px 32px
+        rgba(92, 48, 64, 0.09);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        background 0.28s ease;
+}
+
+.skill-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #d98ca4,
+            #b85c78,
+            #d98ca4
+        );
+
+    opacity: 0.75;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+
+    background:
+        rgba(255, 255, 255, 0.76);
+
+    box-shadow:
+        0 16px 34px
+        rgba(92, 48, 64, 0.13);
+}
+
+
+/* =========================================================
+   CARD TITLE
+   ========================================================= */
+
+.skill-card h2 {
+    margin-bottom: 14px;
+
+    color: #4b2c36;
+
+    font-size:
+        clamp(1.05rem, 1.35vw, 1.25rem);
+
+    line-height: 1.35;
+
+    font-weight: 650;
+}
+
+
+/* =========================================================
+   CARD TEXT
+   ========================================================= */
+
+.skill-card p {
+    margin-bottom: 10px;
+
+    color: #4a3a3f;
+
+    font-size:
+        clamp(0.86rem, 1vw, 0.98rem);
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   SKILL LIST
+   ========================================================= */
+
+.skill-card ul {
+    margin: 0;
+
+    padding-left: 20px;
+}
+
+.skill-card li {
+    margin-bottom: 8px;
+
+    color: #443333;
+
+    font-size:
+        clamp(0.86rem, 1vw, 0.96rem);
+
+    line-height: 1.55;
+}
+
+.skill-card li:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   SKILL TAGS
+   ========================================================= */
+
+.skill-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 14px;
+}
+
+.skill-tag {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 30px;
+
+    padding:
+        5px 12px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(255, 255, 255, 0.48);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.58);
+
+    color: #5a3442;
+
+    font-size: 0.78rem;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition:
+        transform 0.22s ease,
+        background 0.22s ease;
+}
+
+.skill-tag:hover {
+    transform: translateY(-2px);
+
+    background:
+        rgba(255, 255, 255, 0.72);
+}
+
+
+/* =========================================================
+   SKILL ICON
+   ========================================================= */
+
+.skill-icon {
+    width: 46px;
+    height: 46px;
+
+    margin-bottom: 13px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255, 255, 255, 0.5);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.62);
+
+    color: #a65370;
+
+    font-size: 1.25rem;
+
+    box-shadow:
+        0 6px 18px
+        rgba(92, 48, 64, 0.07);
+}
+
+
+/* =========================================================
+   PROGRESS / SKILL LEVEL
+   ========================================================= */
+
+.skill-progress {
+    width: 100%;
+
+    height: 7px;
+
+    margin-top: 14px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background:
+        rgba(255, 255, 255, 0.48);
+}
+
+.skill-progress span {
+    display: block;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #d98ca4,
+            #b85c78
+        );
+}
+
+
+/* =========================================================
+   BOTTOM BUTTON GROUP
+   ========================================================= */
+
+.page-bottom-btn-group {
+    position: relative;
+
+    z-index: 3;
+
+    width: 100%;
+
+    margin:
+        40px auto
+        0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   BUTTON BASE
+   ========================================================= */
+
+.page-bottom-btn-group a {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 190px;
+
+    min-height: 50px;
+
+    padding:
+        14px 30px;
+
+    border-radius: 999px;
+
+    text-decoration: none;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    line-height: 1.25;
+
+    text-align: center;
+
+    white-space: nowrap;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        background 0.28s ease;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+   ========================================================= */
+
+.btn-primary {
+    background:
+        rgba(255, 255, 255, 0.55);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.65);
+
+    color: #462834;
+
+    box-shadow:
+        0 8px 20px
+        rgba(92, 48, 64, 0.07);
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON
+   ========================================================= */
+
+.btn-secondary {
+    background:
+        rgba(255, 255, 255, 0.4);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.55);
+
+    color: #462834;
+
+    box-shadow:
+        0 8px 20px
+        rgba(92, 48, 64, 0.06);
+}
+
+
+/* =========================================================
+   BUTTON HOVER
+   ========================================================= */
+
+.page-bottom-btn-group a:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(92, 48, 64, 0.12);
+}
+
+
+/* =========================================================
+   REVEAL ANIMATION
+   ========================================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform:
+        translateY(18px);
+
+    animation:
+        skillsReveal 0.65s ease forwards;
+}
+
+@keyframes skillsReveal {
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .skills-stage {
+        padding:
+            88px
+            28px
+            32px;
+    }
+
+    .skills-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 18px;
+    }
+
+    .skill-card {
+        padding: 20px;
+    }
+
+    .page-bottom-btn-group a {
+        min-width: 175px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    html,
+    body {
+        min-height: 100%;
+
+        overflow-x: hidden;
+
+        overflow-y: auto;
+    }
+
+
+    /* -----------------------------------------
+       Main stage
+       ----------------------------------------- */
+
+    .skills-stage {
+        width: 100%;
+
+        min-height: 100svh;
+
+        height: auto;
+
+        padding:
+            84px
+            20px
+            36px;
+
+        overflow: visible;
+    }
+
+
+    .skills-content {
+        width: 100%;
+
+        max-width: 720px;
+
+        margin: 0 auto;
+    }
+
+
+    /* -----------------------------------------
+       Title
+       ----------------------------------------- */
+
+    .page-title {
+        font-size:
+            clamp(2rem, 8vw, 2.7rem);
+
+        line-height: 1.1;
+
+        margin-bottom: 0;
+    }
+
+
+    /* -----------------------------------------
+       Grid
+       ----------------------------------------- */
+
+    .skills-grid {
+        width: 100%;
+
+        margin-top: 24px;
+
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+
+    /* -----------------------------------------
+       Cards
+       ----------------------------------------- */
+
+    .skill-card {
+        width: 100%;
+
+        min-height: 0;
+
+        padding: 20px;
+
+        border-radius: 17px;
+    }
+
+    .skill-card:hover {
+        transform: none;
+    }
+
+    .skill-card h2 {
+        font-size: 1.12rem;
+
+        margin-bottom: 10px;
+    }
+
+    .skill-card p {
+        font-size: 0.94rem;
+
+        line-height: 1.6;
+    }
+
+    .skill-card li {
+        font-size: 0.93rem;
+
+        line-height: 1.55;
+    }
+
+
+    /* -----------------------------------------
+       Icon
+       ----------------------------------------- */
+
+    .skill-icon {
+        width: 42px;
+        height: 42px;
+
+        margin-bottom: 11px;
+
+        border-radius: 12px;
+
+        font-size: 1.1rem;
+    }
+
+
+    /* -----------------------------------------
+       Tags
+       ----------------------------------------- */
+
+    .skill-tags {
+        gap: 7px;
+
+        margin-top: 12px;
+    }
+
+    .skill-tag {
+        min-height: 29px;
+
+        padding:
+            5px 10px;
+
+        font-size: 0.75rem;
+    }
+
+
+    /* =====================================================
+       MOBILE BOTTOM BUTTONS
+       IMPORTANT:
+       HORIZONTAL PILL BUTTONS
+       ===================================================== */
+
+    .skills-stage .page-bottom-btn-group {
+
+        width: 100% !important;
+
+        max-width: 720px !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+
+        gap: 16px !important;
+
+        margin:
+            42px auto 0 !important;
+
+        padding:
+            0 16px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    .skills-stage .page-bottom-btn-group a,
+    .skills-stage .page-bottom-btn-group .btn-primary,
+    .skills-stage .page-bottom-btn-group .btn-secondary {
+
+        width: 88vw !important;
+
+        max-width: 680px !important;
+
+        min-width: 0 !important;
+
+        height: auto !important;
+
+        min-height: 88px !important;
+
+        aspect-ratio: auto !important;
+
+        padding:
+            18px 22px !important;
+
+        border-radius: 46px !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+
+        box-sizing: border-box !important;
+
+        text-align: center !important;
+
+        font-size: 21px !important;
+
+        line-height: 1.25 !important;
+
+        font-weight: 600 !important;
+
+        white-space: normal !important;
+
+        flex: 0 0 auto !important;
+
+        transform: none;
+    }
+
+
+    .skills-stage .page-bottom-btn-group .btn-primary {
+
+        background:
+            rgba(255, 255, 255, 0.55) !important;
+
+        border:
+            1px solid rgba(255, 255, 255, 0.65) !important;
+
+        color: #462834 !important;
+
+        box-shadow:
+            0 8px 22px
+            rgba(92, 48, 64, 0.08) !important;
+    }
+
+
+    .skills-stage .page-bottom-btn-group .btn-secondary {
+
+        background:
+            rgba(255, 255, 255, 0.40) !important;
+
+        border:
+            1px solid rgba(255, 255, 255, 0.55) !important;
+
+        color: #462834 !important;
+
+        box-shadow:
+            0 8px 22px
+            rgba(92, 48, 64, 0.08) !important;
+    }
+
+
+    .skills-stage .page-bottom-btn-group a:hover {
+
+        transform:
+            translateY(-2px) !important;
+
+        border-radius:
+            46px !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .skills-stage {
+        padding:
+            80px
+            16px
+            32px;
+    }
+
+
+    .page-title {
+        font-size:
+            clamp(1.9rem, 9vw, 2.3rem);
+    }
+
+
+    .skills-grid {
+        margin-top: 20px;
+
+        gap: 14px;
+    }
+
+
+    .skill-card {
+        padding: 18px;
+
+        border-radius: 16px;
+    }
+
+
+    .skill-card h2 {
+        font-size: 1.06rem;
+    }
+
+
+    .skill-card p,
+    .skill-card li {
+        font-size: 0.9rem;
+    }
+
+
+    .skill-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    /* -----------------------------------------
+       Small phone buttons
+       ----------------------------------------- */
+
+    .skills-stage .page-bottom-btn-group {
+
+        gap: 14px !important;
+
+        margin-top:
+            36px !important;
+
+        padding:
+            0 12px !important;
+    }
+
+
+    .skills-stage .page-bottom-btn-group a,
+    .skills-stage .page-bottom-btn-group .btn-primary,
+    .skills-stage .page-bottom-btn-group .btn-secondary {
+
+        width: 90vw !important;
+
+        max-width: none !important;
+
+        min-height: 78px !important;
+
+        padding:
+            16px 20px !important;
+
+        border-radius:
+            42px !important;
+
+        font-size:
+            19px !important;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .skills-stage {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+
+    .skills-stage .page-bottom-btn-group {
+
+        gap:
+            12px !important;
+    }
+
+
+    .skills-stage .page-bottom-btn-group a,
+    .skills-stage .page-bottom-btn-group .btn-primary,
+    .skills-stage .page-bottom-btn-group .btn-secondary {
+
+        width:
+            92vw !important;
+
+        min-height:
+            72px !important;
+
+        padding:
+            14px 16px !important;
+
+        border-radius:
+            38px !important;
+
+        font-size:
+            18px !important;
+    }
+}
