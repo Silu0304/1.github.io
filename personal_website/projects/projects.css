@@ -1,0 +1,1803 @@
+/* =========================================================
+   PROJECTS.CSS
+   ========================================================= */
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    line-height: 1.5;
+
+    color: #443333;
+
+    height: 100svh;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(255,245,248,.30),
+            rgba(255,245,248,.30)
+        ),
+        url("../images/home-bg.png")
+        center center /
+        cover
+        fixed
+        no-repeat;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+#navbar {
+
+    position: fixed;
+
+    width: 100%;
+
+    z-index: 999;
+
+    background:
+        rgba(255,255,255,0.04);
+
+    backdrop-filter:
+        blur(22px);
+
+    -webkit-backdrop-filter:
+        blur(22px);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.08);
+}
+
+
+.nav-container {
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding:
+        1rem
+        20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.logo {
+
+    font-size: 1.3rem;
+
+    font-weight: 600;
+
+    color: #4b2c36;
+}
+
+
+.nav-links {
+
+    display: flex;
+
+    gap: 14px;
+
+    list-style: none;
+}
+
+
+.glass-nav-item {
+
+    display: inline-block;
+
+    padding:
+        7px
+        16px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,255,255,0.15);
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.25);
+
+    color: #4b2c36;
+
+    text-decoration: none;
+
+    font-weight: 500;
+
+    transition:
+        all
+        0.25s
+        ease;
+}
+
+
+.glass-nav-item:hover {
+
+    transform:
+        scale(1.12);
+
+    background:
+        rgba(255,255,255,0.3);
+
+    color:
+        #b85c78;
+}
+
+
+.menu-btn {
+
+    display: none;
+
+    font-size: 1.8rem;
+
+    cursor: pointer;
+
+    color: #4b2c36;
+}
+
+
+/* =========================================================
+   NAV CHARACTER ICON
+   ========================================================= */
+
+.nav-char-icon {
+
+    height: 28px;
+
+    width: auto;
+
+    margin-left: 6px;
+
+    vertical-align: middle;
+
+    pointer-events: none;
+}
+
+
+.nav-hint {
+
+    color: #4b2c36;
+
+    font-size: .75rem;
+
+    opacity: .7;
+
+    white-space: nowrap;
+
+    margin-left: 20px;
+}
+
+
+/* =========================================================
+   PROJECT PAGE
+   ========================================================= */
+
+body .projects-hero {
+
+    height: 100svh;
+
+    min-height: 0;
+
+    overflow: hidden;
+
+    background: transparent;
+
+    position: relative;
+
+    padding:
+        clamp(76px, 8.5svh, 96px)
+        5vw
+        14px;
+}
+
+
+body .projects-container {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1200px;
+
+    width: 100%;
+
+    margin: auto;
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap:
+        clamp(
+            12px,
+            1.8svh,
+            22px
+        );
+}
+
+
+/* =========================================================
+   PAGE TITLE
+   ========================================================= */
+
+body .projects-container .page-title {
+
+    text-align: center;
+
+    font-size:
+        clamp(
+            2.5rem,
+            5.5svh,
+            4rem
+        );
+
+    color: #332228;
+
+    margin: 0;
+
+    flex: 0 0 auto;
+
+    line-height: 1.12;
+}
+
+
+/* =========================================================
+   HERO CAROUSEL
+   ========================================================= */
+
+body .projects-container .hero-carousel {
+
+    width: 100%;
+
+    height:
+        clamp(
+            220px,
+            32svh,
+            360px
+        );
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background:
+        rgba(255,255,255,.30);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    border:
+        1px solid
+        rgba(255,255,255,.45);
+
+    margin-bottom: 0;
+
+    flex: 0 0 auto;
+
+    position: relative;
+
+    scroll-behavior: auto;
+}
+
+
+.auto-carousel-wrap {
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+}
+
+
+.auto-carousel-track {
+
+    display: flex;
+
+    gap: 16px;
+
+    height: 100%;
+
+    width: max-content;
+
+    animation:
+        autoScroll
+        22s
+        linear
+        infinite;
+}
+
+
+.auto-carousel-wrap:hover
+.auto-carousel-track {
+
+    animation-play-state: paused;
+}
+
+
+.auto-carousel-track img {
+
+    height: 100%;
+
+    width: auto;
+
+    border-radius: 12px;
+
+    object-fit: cover;
+
+    flex-shrink: 0;
+}
+
+
+.hero-track {
+
+    display: flex;
+
+    gap: 0;
+
+    width: max-content;
+
+    height: 100%;
+
+    animation:
+        autoScroll
+        22s
+        linear
+        infinite;
+}
+
+
+.hero-track-group {
+
+    display: flex;
+
+    flex: 0 0 auto;
+
+    gap: 16px;
+
+    height: 100%;
+
+    padding: 8px;
+}
+
+
+.hero-carousel:hover
+.hero-track {
+
+    animation-play-state: paused;
+}
+
+
+.hero-track img {
+
+    height: 100%;
+
+    width:
+        clamp(
+            220px,
+            25vw,
+            320px
+        );
+
+    object-fit: cover;
+
+    object-position: center;
+
+    border-radius: 14px;
+
+    flex-shrink: 0;
+}
+
+
+@keyframes autoScroll {
+
+    0% {
+
+        transform:
+            translateX(0);
+    }
+
+    100% {
+
+        transform:
+            translateX(-33.333%);
+    }
+}
+
+
+/* =========================================================
+   PROJECT CARDS
+   ========================================================= */
+
+body .projects-container .two-col-wrapper {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        clamp(
+            16px,
+            2.2vw,
+            34px
+        );
+}
+
+
+.glass-card {
+
+    background:
+        rgba(255,255,255,.65);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    border:
+        1px solid
+        rgba(255,255,255,.75);
+
+    border-radius: 18px;
+
+    padding:
+        clamp(
+            16px,
+            2.4svh,
+            28px
+        );
+
+    box-shadow:
+        0 8px 22px
+        rgba(184,92,119,.10);
+
+    transition:
+        .28s;
+}
+
+
+.glass-card:hover {
+
+    transform:
+        translateY(-5px);
+}
+
+
+.glass-card h2 {
+
+    font-size:
+        clamp(
+            1.12rem,
+            2svh,
+            1.35rem
+        );
+
+    line-height: 1.45;
+
+    color: #462834;
+
+    margin-bottom: 14px;
+}
+
+
+.divider-line {
+
+    width: 180px;
+
+    height: 4px;
+
+    margin-bottom: 16px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #c9748f,
+            #b04f6b,
+            #c9748f,
+            transparent
+        );
+}
+
+
+.glass-card ul {
+
+    padding-left: 22px;
+}
+
+
+.glass-card li {
+
+    margin-bottom:
+        clamp(
+            5px,
+            .9svh,
+            12px
+        );
+
+    line-height: 1.7;
+
+    font-size:
+        clamp(
+            .92rem,
+            1.7svh,
+            1.12rem
+        );
+}
+
+
+/* =========================================================
+   BOTTOM BUTTONS
+   ========================================================= */
+
+.page-bottom-btn-group {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 0;
+
+    flex: 0 0 auto;
+}
+
+
+.btn-primary,
+.btn-secondary {
+
+    padding:
+        clamp(
+            9px,
+            1.3svh,
+            14px
+        )
+        clamp(
+            16px,
+            2.8vw,
+            32px
+        );
+
+    border-radius: 999px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: .25s;
+}
+
+
+.btn-primary {
+
+    background:
+        rgba(255,255,255,.55);
+
+    border:
+        1px solid
+        rgba(255,255,255,.60);
+
+    color: #462834;
+}
+
+
+.btn-secondary {
+
+    background:
+        rgba(255,255,255,.40);
+
+    border:
+        1px solid
+        rgba(255,255,255,.45);
+
+    color: #462834;
+}
+
+
+.btn-primary:hover,
+.btn-secondary:hover {
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+
+    position: fixed;
+
+    z-index: 5;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    height: 28px;
+
+    padding: 3px 0;
+
+    text-align: center;
+
+    font-size: .8rem;
+
+    line-height: 22px;
+
+    color: #553b44;
+
+    background:
+        rgba(255,245,248,.32);
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+}
+
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+.animate-item {
+
+    opacity: 0;
+
+    transform:
+        translateY(25px);
+
+    animation:
+        fadeUp
+        .7s
+        forwards;
+}
+
+
+.item-2 {
+
+    animation-delay:
+        .15s;
+}
+
+
+.item-3 {
+
+    animation-delay:
+        .3s;
+}
+
+
+@keyframes fadeUp {
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   =========================================================
+   MOBILE VERSION
+   =========================================================
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+
+    /* =====================================================
+       BODY
+       ===================================================== */
+
+    body {
+
+        height: auto;
+
+        min-height: 100svh;
+
+        overflow-x: hidden;
+
+        overflow-y: auto;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+
+    /* =====================================================
+       MOBILE NAVBAR
+       ===================================================== */
+
+    #navbar {
+
+        position: fixed;
+
+        top: 0;
+
+        left: 0;
+
+        right: 0;
+
+        width: 100%;
+
+        z-index: 9999;
+    }
+
+
+    .nav-container {
+
+        width: 100%;
+
+        padding:
+            12px
+            20px;
+
+        min-height: 64px;
+    }
+
+
+    .menu-btn {
+
+        display: block;
+
+        position: relative;
+
+        z-index: 10001;
+
+        font-size: 1.8rem;
+
+        cursor: pointer;
+
+        color: #4b2c36;
+
+        padding: 6px;
+
+        line-height: 1;
+
+        -webkit-tap-highlight-color: transparent;
+
+        touch-action: manipulation;
+    }
+
+
+    /* =====================================================
+       MOBILE NAV LINKS
+       ===================================================== */
+
+    .nav-links {
+
+        position: absolute;
+
+        top: 100%;
+
+        left: 0;
+
+        right: 0;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        padding:
+            14px
+            18px
+            18px;
+
+        background:
+            rgba(255,255,255,.82);
+
+        backdrop-filter:
+            blur(22px);
+
+        -webkit-backdrop-filter:
+            blur(22px);
+
+        border-bottom:
+            1px solid
+            rgba(255,255,255,.65);
+
+        z-index: 10000;
+    }
+
+
+    .nav-links.active {
+
+        display: flex;
+    }
+
+
+    .glass-nav-item {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        width: 100%;
+
+        min-height: 46px;
+
+        padding:
+            9px
+            16px;
+
+        border-radius: 999px;
+
+        background:
+            rgba(255,255,255,.35);
+
+        border:
+            1px solid
+            rgba(255,255,255,.45);
+
+        color: #4b2c36;
+
+        text-decoration: none;
+
+        font-weight: 500;
+
+        -webkit-tap-highlight-color: transparent;
+
+        touch-action: manipulation;
+    }
+
+
+    .glass-nav-item:active {
+
+        transform:
+            scale(.97);
+
+        background:
+            rgba(255,255,255,.55);
+    }
+
+
+    /* =====================================================
+       PROJECT HERO
+
+       这里是修复 My Projects 被 navbar 遮挡的核心
+       ===================================================== */
+
+    body .projects-hero {
+
+        width: 100%;
+
+        height: auto;
+
+        min-height: 100svh;
+
+        overflow: visible;
+
+        position: relative;
+
+        /*
+         * 顶部 120px 专门给固定 navbar 留空间
+         */
+        padding:
+            120px
+            20px
+            90px;
+
+        /*
+         * iPhone / iPad 底部安全区域
+         */
+        padding-bottom:
+            calc(
+                90px
+                +
+                env(safe-area-inset-bottom)
+            );
+    }
+
+
+    /* =====================================================
+       PROJECT CONTAINER
+       ===================================================== */
+
+    body .projects-container {
+
+        width: 100%;
+
+        height: auto;
+
+        margin: 0 auto;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: flex-start;
+
+        gap: 18px;
+
+        position: relative;
+
+        z-index: 2;
+    }
+
+
+    /* =====================================================
+       MY PROJECTS TITLE
+       ===================================================== */
+
+    body .projects-container .page-title {
+
+        display: block;
+
+        width: 100%;
+
+        text-align: center;
+
+        font-size:
+            clamp(
+                2.2rem,
+                8vw,
+                2.8rem
+            );
+
+        line-height: 1.15;
+
+        color: #332228;
+
+        margin: 0;
+
+        padding: 0;
+
+        /*
+         * 不裁切标题
+         */
+        overflow: visible;
+
+        /*
+         * 保证标题在内容层
+         */
+        position: relative;
+
+        z-index: 20;
+
+        flex: 0 0 auto;
+
+        /*
+         * 防止文字因为父容器高度造成裁切
+         */
+        min-height: auto;
+    }
+
+
+    /* =====================================================
+       MOBILE CAROUSEL
+       ===================================================== */
+
+    body .projects-container .hero-carousel {
+
+        width: 100%;
+
+        height: 220px;
+
+        min-height: 220px;
+
+        overflow: hidden;
+
+        border-radius: 22px;
+
+        background:
+            rgba(255,255,255,.30);
+
+        backdrop-filter:
+            blur(18px);
+
+        -webkit-backdrop-filter:
+            blur(18px);
+
+        border:
+            1px solid
+            rgba(255,255,255,.45);
+
+        margin: 0;
+
+        flex: 0 0 auto;
+
+        position: relative;
+
+        z-index: 2;
+    }
+
+
+    .auto-carousel-wrap {
+
+        width: 100%;
+
+        height: 100%;
+
+        overflow: hidden;
+
+        border-radius: 18px;
+    }
+
+
+    .hero-track {
+
+        display: flex;
+
+        gap: 0;
+
+        width: max-content;
+
+        height: 100%;
+
+        animation:
+            autoScroll
+            22s
+            linear
+            infinite;
+    }
+
+
+    .hero-track-group {
+
+        display: flex;
+
+        flex: 0 0 auto;
+
+        gap: 12px;
+
+        height: 100%;
+
+        padding: 8px;
+    }
+
+
+    .hero-track img {
+
+        width:
+            min(
+                74vw,
+                280px
+            );
+
+        height: 100%;
+
+        object-fit: cover;
+
+        object-position: center;
+
+        border-radius: 14px;
+
+        flex-shrink: 0;
+    }
+
+
+    /* =====================================================
+       TWO COLUMN -> ONE COLUMN
+       ===================================================== */
+
+    body .projects-container .two-col-wrapper {
+
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+        position: relative;
+
+        z-index: 3;
+    }
+
+
+    /* =====================================================
+       MOBILE GLASS CARDS
+       ===================================================== */
+
+    body .projects-container .glass-card {
+
+        width: 100%;
+
+        padding: 20px;
+
+        background:
+            rgba(255,255,255,.65);
+
+        backdrop-filter:
+            blur(18px);
+
+        -webkit-backdrop-filter:
+            blur(18px);
+
+        border:
+            1px solid
+            rgba(255,255,255,.75);
+
+        border-radius: 18px;
+
+        box-shadow:
+            0 8px 22px
+            rgba(184,92,119,.10);
+
+        position: relative;
+
+        z-index: 3;
+    }
+
+
+    .glass-card h2 {
+
+        font-size: 1.2rem;
+
+        line-height: 1.45;
+
+        color: #462834;
+
+        margin-bottom: 14px;
+
+        overflow: visible;
+    }
+
+
+    .divider-line {
+
+        width: 150px;
+
+        height: 4px;
+
+        margin-bottom: 16px;
+    }
+
+
+    .glass-card ul {
+
+        padding-left: 22px;
+
+        margin: 0;
+    }
+
+
+    .glass-card li {
+
+        font-size: 1rem;
+
+        line-height: 1.7;
+
+        margin-bottom: 7px;
+    }
+
+
+    /* =====================================================
+       MOBILE BOTTOM BUTTONS
+
+       这里保证：
+       1. 按钮完整显示
+       2. 按钮可以点击
+       3. 不会被背景层挡住
+       4. 不会被 footer 压住
+       ===================================================== */
+
+    .page-bottom-btn-group {
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        justify-content: flex-start;
+
+        gap: 14px;
+
+        margin-top: 4px;
+
+        position: relative;
+
+        z-index: 50;
+
+        padding:
+            8px
+            0
+            20px;
+
+        flex: 0 0 auto;
+    }
+
+
+    .btn-primary,
+    .btn-secondary {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        width: 100%;
+
+        min-height: 48px;
+
+        padding:
+            11px
+            20px;
+
+        border-radius: 999px;
+
+        text-decoration: none;
+
+        font-weight: 600;
+
+        position: relative;
+
+        z-index: 60;
+
+        /*
+         * 确保手机能够点击
+         */
+        pointer-events: auto;
+
+        touch-action: manipulation;
+
+        -webkit-tap-highlight-color: transparent;
+    }
+
+
+    .btn-primary {
+
+        background:
+            rgba(255,255,255,.70);
+
+        border:
+            1px solid
+            rgba(255,255,255,.75);
+
+        color: #462834;
+    }
+
+
+    .btn-secondary {
+
+        background:
+            rgba(255,255,255,.60);
+
+        border:
+            1px solid
+            rgba(255,255,255,.65);
+
+        color: #462834;
+    }
+
+
+    .btn-primary:active,
+    .btn-secondary:active {
+
+        transform:
+            scale(.98);
+
+        background:
+            rgba(255,255,255,.82);
+    }
+
+
+    /* =====================================================
+       MOBILE FOOTER
+       ===================================================== */
+
+    footer {
+
+        position: static;
+
+        width: 100%;
+
+        height: auto;
+
+        padding:
+            10px
+            8px
+            calc(
+                14px
+                +
+                env(safe-area-inset-bottom)
+            );
+
+        line-height: 1.4;
+
+        font-size: .8rem;
+
+        text-align: center;
+
+        color: #553b44;
+
+        background:
+            rgba(255,245,248,.32);
+
+        backdrop-filter:
+            blur(12px);
+
+        -webkit-backdrop-filter:
+            blur(12px);
+
+        z-index: 10;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+
+    body .projects-hero {
+
+        /*
+         * 比 iPad 稍微减少顶部空间
+         */
+        padding-top: 110px;
+
+        padding-left: 16px;
+
+        padding-right: 16px;
+
+        padding-bottom:
+            calc(
+                80px
+                +
+                env(safe-area-inset-bottom)
+            );
+    }
+
+
+    body .projects-container {
+
+        gap: 16px;
+    }
+
+
+    body .projects-container .page-title {
+
+        font-size: 2.25rem;
+
+        line-height: 1.15;
+
+        margin-bottom: 2px;
+    }
+
+
+    body .projects-container .hero-carousel {
+
+        height: 200px;
+
+        min-height: 200px;
+
+        border-radius: 18px;
+    }
+
+
+    body .projects-container .glass-card {
+
+        padding: 18px;
+
+        border-radius: 17px;
+    }
+
+
+    body .projects-container .glass-card h2 {
+
+        font-size: 1.12rem;
+
+        line-height: 1.45;
+    }
+
+
+    body .projects-container .glass-card li {
+
+        font-size: .96rem;
+
+        line-height: 1.65;
+    }
+
+
+    .page-bottom-btn-group {
+
+        gap: 12px;
+
+        padding-bottom: 18px;
+    }
+
+
+    .btn-primary,
+    .btn-secondary {
+
+        min-height: 48px;
+
+        font-size: .95rem;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+
+    body .projects-hero {
+
+        padding-top: 105px;
+
+        padding-left: 14px;
+
+        padding-right: 14px;
+    }
+
+
+    body .projects-container .page-title {
+
+        font-size: 2.05rem;
+
+        line-height: 1.15;
+    }
+
+
+    body .projects-container .hero-carousel {
+
+        height: 180px;
+
+        min-height: 180px;
+    }
+
+
+    body .projects-container .glass-card {
+
+        padding: 16px;
+    }
+
+
+    body .projects-container .glass-card h2 {
+
+        font-size: 1.05rem;
+    }
+
+
+    body .projects-container .glass-card li {
+
+        font-size: .92rem;
+
+        line-height: 1.6;
+    }
+
+
+    .btn-primary,
+    .btn-secondary {
+
+        min-height: 46px;
+
+        font-size: .92rem;
+    }
+}
+/* =========================================================
+   TABLET / iPAD FIX
+   IMPORTANT:
+   iPad landscape width is usually > 768px,
+   so the original mobile media query does not activate.
+   This block fixes tablet/touch devices without changing PC.
+   ========================================================= */
+
+@media
+    (hover: none)
+    and (pointer: coarse) {
+
+    /* =====================================================
+       PROJECT HERO
+       给固定 navbar 留出真正足够的顶部空间
+       ===================================================== */
+
+    body .projects-hero {
+
+        /*
+         * 不改变 PC 端。
+         * 只让 iPad / 触摸设备的内容整体避开 navbar。
+         */
+        padding-top:
+            clamp(
+                120px,
+                14svh,
+                150px
+            );
+
+        padding-left:
+            5vw;
+
+        padding-right:
+            5vw;
+
+        /*
+         * 保证底部按钮不会贴到底部
+         */
+        padding-bottom:
+            40px;
+
+        /*
+         * iPad 页面允许正常向下滚动
+         */
+        height: auto;
+
+        min-height: 100svh;
+
+        overflow: visible;
+    }
+
+
+    /* =====================================================
+       PROJECT CONTAINER
+       ===================================================== */
+
+    body .projects-container {
+
+        height: auto;
+
+        min-height: 0;
+
+        justify-content: flex-start;
+
+        gap:
+            clamp(
+                12px,
+                1.8svh,
+                22px
+            );
+    }
+
+
+    /* =====================================================
+       MY PROJECTS TITLE
+       核心修复
+       ===================================================== */
+
+    body .projects-container .page-title {
+
+        /*
+         * 防止 navbar 覆盖标题
+         */
+        position: relative;
+
+        z-index: 20;
+
+        display: block;
+
+        width: 100%;
+
+        text-align: center;
+
+        /*
+         * 保持你原来的字体大小体系
+         */
+        font-size:
+            clamp(
+                2.5rem,
+                5.5svh,
+                4rem
+            );
+
+        line-height: 1.12;
+
+        margin: 0;
+
+        padding: 0;
+
+        /*
+         * 不允许标题被裁剪
+         */
+        overflow: visible;
+
+        /*
+         * 不改变字体
+         */
+        white-space: normal;
+    }
+
+
+    /* =====================================================
+       CAROUSEL
+       ===================================================== */
+
+    body .projects-container .hero-carousel {
+
+        position: relative;
+
+        z-index: 2;
+
+        overflow: hidden;
+
+        margin-top: 0;
+    }
+
+
+    /* =====================================================
+       PROJECT CARDS
+       ===================================================== */
+
+    body .projects-container .two-col-wrapper {
+
+        position: relative;
+
+        z-index: 3;
+    }
+
+
+    /* =====================================================
+       BOTTOM BUTTONS
+       ===================================================== */
+
+    .page-bottom-btn-group {
+
+        position: relative;
+
+        z-index: 50;
+
+        width: 100%;
+
+        margin-top: 0;
+
+        padding-bottom:
+            calc(
+                20px
+                +
+                env(safe-area-inset-bottom)
+            );
+
+        pointer-events: auto;
+    }
+
+
+    .btn-primary,
+    .btn-secondary {
+
+        position: relative;
+
+        z-index: 60;
+
+        pointer-events: auto;
+
+        touch-action: manipulation;
+    }
+}
+
+
+/* =========================================================
+   iPAD / SMALL TABLET LANDSCAPE
+   ========================================================= */
+
+@media
+    (hover: none)
+    and (pointer: coarse)
+    and (orientation: landscape)
+    and (max-height: 1000px) {
+
+    body .projects-hero {
+
+        /*
+         * 横屏时 navbar 高度比较明显，
+         * 再增加一点顶部安全空间。
+         */
+        padding-top: 135px;
+
+        padding-bottom:
+            calc(
+                35px
+                +
+                env(safe-area-inset-bottom)
+            );
+    }
+
+
+    body .projects-container .page-title {
+
+        /*
+         * 标题本身不缩小、不换字体，
+         * 只保证完整出现在 navbar 下方。
+         */
+        position: relative;
+
+        z-index: 20;
+
+        margin-top: 0;
+
+        margin-bottom: 0;
+
+        overflow: visible;
+    }
+
+
+    .page-bottom-btn-group {
+
+        position: relative;
+
+        z-index: 50;
+
+        margin-top: 0;
+
+        padding-bottom:
+            calc(
+                20px
+                +
+                env(safe-area-inset-bottom)
+            );
+    }
+
+
+    .btn-primary,
+    .btn-secondary {
+
+        position: relative;
+
+        z-index: 60;
+
+        pointer-events: auto;
+
+        touch-action: manipulation;
+    }
+}
